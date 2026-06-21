@@ -1,26 +1,38 @@
 # pi-zai-coding-plan
 
-A [pi](https://pi.dev) extension that overrides the built-in `zai` provider with the
-[Z.AI Coding Plan](https://docs.z.ai/guides/coding/overview) endpoint, models, and
-OpenAI Chat Completions-compatible request handling.
+> **Deprecated / archived.** This extension is no longer needed with pi 0.79.9+
+> because pi now ships built-in Z.AI Coding Plan support for the `zai` provider,
+> including the Coding Plan endpoint, OpenAI Chat Completions transport,
+> Z.AI thinking format, `tool_stream`, and GLM-5.2 `reasoning_effort` handling.
+>
+> Use pi's built-in provider instead:
+>
+> ```bash
+> export ZAI_API_KEY=...
+> pi --model zai/glm-5.2:high
+> ```
+>
+> This repository is kept only as a historical reference. Do not install it for
+> normal use; it may override newer built-in Z.AI model metadata.
 
-It keeps the implementation in a single extension source file
-([`extensions/zai-coding-plan.ts`](./extensions/zai-coding-plan.ts)) and relies on pi's
-built-in `openai-completions` transport, which already parses `reasoning_content`,
-streamed tool-call deltas, `usage.prompt_tokens_details.cached_tokens`, and
-`finish_reason`. No custom `streamSimple` is needed.
+A formerly useful [pi](https://pi.dev) extension that overrode the built-in `zai`
+provider with the [Z.AI Coding Plan](https://docs.z.ai/guides/coding/overview)
+endpoint, models, and OpenAI Chat Completions-compatible request handling.
 
-## Install
+## Historical install
+
+Do **not** install this extension unless you are intentionally testing old behavior.
+Pi 0.79.9+ does not need it.
 
 ```bash
-# from source (local path)
+# historical only
 pi install /Users/mitchfultz/Projects/AI/pi-zai-coding-plan
 
-# try without installing
+# historical only
 pi -e /Users/mitchfultz/Projects/AI/pi-zai-coding-plan
 ```
 
-Set your Coding Plan key:
+For pi's built-in provider, set your Coding Plan key:
 
 ```bash
 export ZAI_API_KEY=...

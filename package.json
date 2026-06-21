@@ -1,7 +1,8 @@
 {
   "name": "pi-zai-coding-plan",
   "version": "0.1.0",
-  "description": "Pi extension that overrides the built-in zai provider with the Z.AI Coding Plan endpoint, models, thinking/reasoning mapping, and payload normalization.",
+  "private": true,
+  "description": "Deprecated historical Pi extension; pi 0.79.9+ has built-in Z.AI Coding Plan support.",
   "keywords": [
     "pi-package",
     "pi-extension",
